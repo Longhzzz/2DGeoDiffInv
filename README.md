@@ -71,7 +71,7 @@ The ordinary profile folders contain impedance, seismic data, well conditions, a
 | [paper_plotting.py](paper_plotting.py) | Formats section layouts, axes, colorbars, and well-location overlays. These functions control display, not inversion updates. |
 | [utils.py](utils.py) | Impedance-to-reflectivity and seismic forward operators, Gaussian filters, evaluation metrics, and shared data/plot utilities. |
 | [models/__init__.py](models/__init__.py) | Package initializer for the model definitions. |
-| [models/dip.py](models/dip.py) | Defines the U-Net that parameterizes impedance updates in DIP inversion. This is separate from the pretrained diffusion U-Net. |
+| [models/dip.py](models/dip.py) | Defines the U-Net that parameterizes impedance updates in neural network reparameterization. This is separate from the pretrained diffusion U-Net. |
 | [models/inr.py](models/inr.py) | Builds 2D coordinates and the HashGrid encoding plus MLP used for INR inversion. |
 | [models/vae2d.py](models/vae2d.py) | Defines the conditional denoising VAE architecture, latent representation, and checkpoint save/load methods. |
 | [train_vae.py](train_vae.py) | Portable command-line launcher for VAE training. Converts user-supplied paths and options into an Accelerate command and supports --dry-run. |
@@ -87,14 +87,16 @@ The ordinary profile folders contain impedance, seismic data, well conditions, a
 
 ### Inference notebooks
 
+The method names follow the paper: traditional inversion, neural network reparameterization (Reparam.), and implicit neural representation (INR).
+
 Each ordinary notebook handles the single profile selected by `data_dir`. The test-set and Marmousi columns below use the same method on their respective inputs. Inversion loops, method-specific settings, figures, and evaluation remain visible in the notebooks.
 
 #### Diffusion regularization
 
 | Method | Test-set notebook | Marmousi notebook |
 |---|---|---|
-| Direct-grid impedance inversion with diffusion regularization | [inference_testset_direct.ipynb](inference_testset_direct.ipynb) | [inference_marmousi_direct.ipynb](inference_marmousi_direct.ipynb) |
-| DIP U-Net parameterization with diffusion regularization | [inference_testset_dip.ipynb](inference_testset_dip.ipynb) | [inference_marmousi_dip.ipynb](inference_marmousi_dip.ipynb) |
+| Traditional inversion with diffusion regularization | [inference_testset_traditional.ipynb](inference_testset_traditional.ipynb) | [inference_marmousi_traditional.ipynb](inference_marmousi_traditional.ipynb) |
+| Neural network reparameterization with diffusion regularization | [inference_testset_reparameterization.ipynb](inference_testset_reparameterization.ipynb) | [inference_marmousi_reparameterization.ipynb](inference_marmousi_reparameterization.ipynb) |
 | INR HashGrid/MLP parameterization with diffusion regularization | [inference_testset_inr.ipynb](inference_testset_inr.ipynb) | [inference_marmousi_inr.ipynb](inference_marmousi_inr.ipynb) |
 
 #### TV and Tikhonov baselines
@@ -103,10 +105,10 @@ These notebooks optimize the physical fitting and regularization objectives with
 
 | Method | Test-set notebook | Marmousi notebook |
 |---|---|---|
-| Direct grid + TV | [inference_testset_direct_tv.ipynb](inference_testset_direct_tv.ipynb) | [inference_marmousi_direct_tv.ipynb](inference_marmousi_direct_tv.ipynb) |
-| Direct grid + Tikhonov | [inference_testset_direct_tikhonov.ipynb](inference_testset_direct_tikhonov.ipynb) | [inference_marmousi_direct_tikhonov.ipynb](inference_marmousi_direct_tikhonov.ipynb) |
-| DIP + TV | [inference_testset_dip_tv.ipynb](inference_testset_dip_tv.ipynb) | [inference_marmousi_dip_tv.ipynb](inference_marmousi_dip_tv.ipynb) |
-| DIP + Tikhonov | [inference_testset_dip_tikhonov.ipynb](inference_testset_dip_tikhonov.ipynb) | [inference_marmousi_dip_tikhonov.ipynb](inference_marmousi_dip_tikhonov.ipynb) |
+| Traditional inversion + TV | [inference_testset_traditional_tv.ipynb](inference_testset_traditional_tv.ipynb) | [inference_marmousi_traditional_tv.ipynb](inference_marmousi_traditional_tv.ipynb) |
+| Traditional inversion + Tikhonov | [inference_testset_traditional_tikhonov.ipynb](inference_testset_traditional_tikhonov.ipynb) | [inference_marmousi_traditional_tikhonov.ipynb](inference_marmousi_traditional_tikhonov.ipynb) |
+| Neural network reparameterization + TV | [inference_testset_reparameterization_tv.ipynb](inference_testset_reparameterization_tv.ipynb) | [inference_marmousi_reparameterization_tv.ipynb](inference_marmousi_reparameterization_tv.ipynb) |
+| Neural network reparameterization + Tikhonov | [inference_testset_reparameterization_tikhonov.ipynb](inference_testset_reparameterization_tikhonov.ipynb) | [inference_marmousi_reparameterization_tikhonov.ipynb](inference_marmousi_reparameterization_tikhonov.ipynb) |
 | INR + TV | [inference_testset_inr_tv.ipynb](inference_testset_inr_tv.ipynb) | [inference_marmousi_inr_tv.ipynb](inference_marmousi_inr_tv.ipynb) |
 | INR + Tikhonov | [inference_testset_inr_tikhonov.ipynb](inference_testset_inr_tikhonov.ipynb) | [inference_marmousi_inr_tikhonov.ipynb](inference_marmousi_inr_tikhonov.ipynb) |
 
@@ -210,14 +212,14 @@ python -m pip install setuptools==78.1.1 wheel==0.45.1 ninja==1.13.0
 python -m pip install --no-build-isolation "git+https://github.com/NVlabs/tiny-cuda-nn@147741674580e12be8151c33dbd0950ead16d1f3#subdirectory=bindings/torch"
 ```
 
-The HashGrid backend does not support macOS CPU/MPS. Select the compute device in the notebook's device cell. Direct-grid and DIP notebooks can use PyTorch on CPU, although execution is slower.
+The HashGrid backend does not support macOS CPU/MPS. Select the compute device in the notebook's device cell. Traditional inversion and neural network reparameterization notebooks can use PyTorch on CPU, although execution is slower.
 
 Choose the notebook for the desired experiment:
 
 | Experiment | Notebook files |
 |---|---|
-| Diffusion regularization with direct-grid, DIP, or INR parameterization | `inference_{testset,marmousi}_{direct,dip,inr}.ipynb` |
-| TV and Tikhonov baselines | `inference_{testset,marmousi}_{direct,dip,inr}_{tv,tikhonov}.ipynb` |
+| Diffusion regularization with traditional inversion, neural network reparameterization, or INR | `inference_{testset,marmousi}_{traditional,reparameterization,inr}.ipynb` |
+| TV and Tikhonov baselines | `inference_{testset,marmousi}_{traditional,reparameterization,inr}_{tv,tikhonov}.ipynb` |
 | DPS, DMPlug, DiffPIR, and the proposed framework | `inference_{testset,marmousi}_{dps,dmplug,diffpir,ours_comparison}.ipynb` |
 | Conditional denoising VAE | `inference_testset_vae.ipynb` |
 | Noise sensitivity | `inference_noise.ipynb` |
@@ -232,8 +234,6 @@ data_dir = ROOT / "data" / "testset" / "section_main_vol00983_slice_363"
 The other ten test profiles are in `data/testset/`. The Marmousi profile is in `data/marmousi/marmousi_2300x730/`. Each profile includes impedance, observed seismic data, well logs and masks, an initial model, metadata, and a saved wavelet. The noise and frequency notebooks use the observation settings supplied in `data/sensitivity/section_main_vol00983_slice_363/`.
 
 Run the notebook cells in order. They load the model and data, display the inputs, prepare the well conditions and initial model, estimate or load the wavelet, run inversion, and display and save the results. The parameterization and regularization notebooks estimate the wavelet from the observations and well logs. Framework comparisons and VAE expose `reestimate_wavelet` to select between saved and re-estimated wavelets. Sensitivity tests use the supplied known wavelets.
-
-The parameter cells and inversion loops define the settings for each experiment. `num_runs` and `seed_start` control repeated inversions of the same profile. `num_iterations` controls data-fitting updates, and `N_rev` controls the requested reverse-denoising budget where applicable. Notebooks using `begin_ratio` execute `int(epochs * begin_ratio)` outer rounds. Framework and sensitivity notebooks define their iteration schedules directly. `plot_seed` and `plot_interval` control intermediate displays. Where available, `background_implementation` selects `conv2d` or `fft`; rerun the filter-construction cell and subsequent cells after changing this option.
 
 The diffusion notebooks load `weights/checkpoint-22608/`, which contains the U-Net, both ControlNets, and scheduler configuration. The VAE notebook loads `weights/vae-checkpoint-120500/vae/`. Run from the repository root so these relative paths resolve correctly.
 
