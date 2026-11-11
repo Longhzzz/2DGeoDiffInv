@@ -1,0 +1,12 @@
+{
+  "sample_size": 512,
+  "in_channels": 1,
+  "condition_channels": 3,
+  "out_channels": 1,
+  "latent_dim": 512,
+  "block_out_channels": "128,128,256,256,512,512,512",
+  "layers_per_block": 3,
+  "base_channels": null,
+  "channel_multipliers": null,
+  "noise_condition_scale": 1.0
+}

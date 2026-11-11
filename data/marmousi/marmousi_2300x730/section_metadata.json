@@ -1,0 +1,43 @@
+{
+  "section_id": "marmousi_2300x730",
+  "target_shape": [
+    2300,
+    730
+  ],
+  "imp_min": 2080.5399658203123,
+  "imp_max": 15730.0,
+  "truth_min": 2972.199951171875,
+  "truth_max": 12100.0,
+  "initial_model_scale": "normalized_0_1",
+  "initial_model_kernel": 301,
+  "initial_sigma": 43.0,
+  "background_padding": "reflect",
+  "forward_window": [
+    2300,
+    8
+  ],
+  "well_count": 6,
+  "well_starts": [
+    107,
+    2117,
+    270,
+    1854,
+    1137,
+    511
+  ],
+  "well_width": 3,
+  "estimated_wavelet_shape": [
+    1,
+    92,
+    999
+  ],
+  "dt": 0.0005,
+  "regenerated_wavelet": false,
+  "regenerated_observation": false,
+  "array_layout": [
+    "lateral",
+    "time"
+  ],
+  "source_volume_id": null,
+  "impedance_units": "kg/(m^2 s)"
+}

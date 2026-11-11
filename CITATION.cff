@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the accompanying manuscript listed in preferred-citation."
+type: software
+title: 2DGeoDiffInv
+version: "1.0.0"
+date-released: "2026-11-11"
+url: "https://github.com/Longhzzz/2DGeoDiffInv"
+license: Apache-2.0
+authors:
+  - family-names: Han
+    given-names: Long
+preferred-citation:
+  type: unpublished
+  title: "A Plug-and-Play Diffusion Regularizer for Seismic Inversion"
+  year: 2026
+  authors:
+    - family-names: Han
+      given-names: Long
+    - family-names: Wu
+      given-names: Xinming
+    - family-names: Sun
+      given-names: Xiaoming
+    - family-names: Li
+      given-names: Jintao
+    - family-names: Dou
+      given-names: Yimin

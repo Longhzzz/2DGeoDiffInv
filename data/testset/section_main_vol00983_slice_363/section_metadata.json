@@ -1,0 +1,24 @@
+{
+  "section_id": "section_main_vol00983_slice_363",
+  "volume_id": 983,
+  "orientation": "legacy_permute_2_1_0",
+  "section_index": 363,
+  "source_description": "00983.npz imp.permute(2,1,0)[363], original cached main-text profile",
+  "source_fixed_inputs": "/wzg3/home/hanlong/MyProject/DDPM/experiments/three_methods_45x2_gpu3_20261027/fixed_inputs.pth",
+  "source_fixed_inputs_sha256": "2e0fdf2fd09977d6f49b332e574754924d81a2f313d135b105279b2ce404c1a3",
+  "imp_min": 1226.0,
+  "imp_max": 4628.0,
+  "target_shape": [
+    512,
+    512
+  ],
+  "initial_model_scale": "normalized_0_1",
+  "initial_model_kernel": 201,
+  "well_count": 2,
+  "well_starts": [
+    30,
+    400
+  ],
+  "well_width": 3,
+  "group": "main_text_profile"
+}

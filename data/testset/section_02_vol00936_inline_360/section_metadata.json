@@ -1,0 +1,75 @@
+{
+  "order": 2,
+  "section_id": "section_02_vol00936_inline_360",
+  "volume_id": 936,
+  "orientation": "inline",
+  "section_index": 360,
+  "well_seed": 271830,
+  "well_count": 2,
+  "well_starts": [
+    148,
+    469
+  ],
+  "well_width": 3,
+  "frequency_seed": 314162,
+  "f0": 73.58,
+  "addf": 9.81,
+  "axis_order": [
+    "time",
+    "xline",
+    "inline"
+  ],
+  "target_shape": [
+    512,
+    512
+  ],
+  "imp_min": 2058.0,
+  "imp_max": 7248.0,
+  "well_image_file": "well_image.npy",
+  "well_image_scale": "ControlNet input: [-1,1] inside the mask and 0 outside",
+  "minimum_frequency": 63.769999999999996,
+  "initial_model_kernel": 201,
+  "wavelet_fit_iterations": 300,
+  "estimated_wavelet_npy_file": "estimated_wavelet_mat.npy",
+  "estimated_wavelet_shape": [
+    1,
+    32,
+    999
+  ],
+  "estimated_wavelet_description": "Wavelet fitted from seismic and random wells and used by inversion",
+  "seismic_generation": {
+    "seed": 314161,
+    "f0": 73.58,
+    "addf": 9.81,
+    "minimum_frequency": 63.769999999999996,
+    "dt": 0.0005,
+    "duration_factor": 5.0,
+    "synthetic_window": [
+      5,
+      5
+    ],
+    "n_patch": [
+      103,
+      103
+    ],
+    "n_control_points": [
+      4,
+      8
+    ],
+    "noise_std": 1.0,
+    "noise_kernel": 21,
+    "rms_window": 51
+  },
+  "wavelet_fit_final_well_match": 293.9436950683594,
+  "wavelet_fit_final_seismic_match": 91.90625762939453,
+  "array_layout": [
+    "lateral",
+    "time"
+  ],
+  "forward_window": [
+    512,
+    16
+  ],
+  "source_volume_id": 936,
+  "impedance_units": "kg/(m^2 s)"
+}

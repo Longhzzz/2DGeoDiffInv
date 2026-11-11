@@ -1,0 +1,473 @@
+{
+  "section": "00983, slice 363",
+  "well_starts": [
+    30,
+    400
+  ],
+  "dt_s": 0.001,
+  "description": "Fixed observations and equal-energy known Ricker wavelets from the manuscript sensitivity experiments.",
+  "settings": [
+    {
+      "file": "f015_snr20_w02.npz",
+      "frequency_hz": 15,
+      "snr_db": 20,
+      "source": "DDPM/experiments/seismic_sensitivity_90outer_fit10_denoise5_dt1ms_seed42_20261030/inputs/f015_snr20_w02.pth",
+      "source_sha256": "5421949aec3a5a3d713ca700afef466dbbdc82a79e74dbb7773964629143a8f7",
+      "scalars": {
+        "imp_min": 1226.0,
+        "imp_max": 4628.0,
+        "positions": [
+          30,
+          400
+        ],
+        "frequency_hz": 15,
+        "snr_db": 20,
+        "well_count": 2,
+        "dt_s": 0.001
+      },
+      "arrays": {
+        "target": [
+          1,
+          512,
+          512
+        ],
+        "observed": [
+          1,
+          1,
+          512,
+          512
+        ],
+        "well_image": [
+          1,
+          1,
+          512,
+          512
+        ],
+        "well_mask": [
+          1,
+          1,
+          512,
+          512
+        ],
+        "initial_model": [
+          1,
+          512,
+          512
+        ],
+        "wavelet": [
+          1,
+          32,
+          501
+        ],
+        "clean": [
+          1,
+          1,
+          512,
+          512
+        ],
+        "maximum_well_mask": [
+          1,
+          1,
+          512,
+          512
+        ]
+      }
+    },
+    {
+      "file": "f025_snr20_w02.npz",
+      "frequency_hz": 25,
+      "snr_db": 20,
+      "source": "DDPM/experiments/seismic_sensitivity_90outer_fit10_denoise5_dt1ms_seed42_20261030/inputs/f025_snr20_w02.pth",
+      "source_sha256": "ee917d884b211bbe3975ae5d58cf113fc700b863780f50d5cea25d1d35ba2e15",
+      "scalars": {
+        "imp_min": 1226.0,
+        "imp_max": 4628.0,
+        "positions": [
+          30,
+          400
+        ],
+        "frequency_hz": 25,
+        "snr_db": 20,
+        "well_count": 2,
+        "dt_s": 0.001
+      },
+      "arrays": {
+        "target": [
+          1,
+          512,
+          512
+        ],
+        "observed": [
+          1,
+          1,
+          512,
+          512
+        ],
+        "well_image": [
+          1,
+          1,
+          512,
+          512
+        ],
+        "well_mask": [
+          1,
+          1,
+          512,
+          512
+        ],
+        "initial_model": [
+          1,
+          512,
+          512
+        ],
+        "wavelet": [
+          1,
+          32,
+          501
+        ],
+        "clean": [
+          1,
+          1,
+          512,
+          512
+        ],
+        "maximum_well_mask": [
+          1,
+          1,
+          512,
+          512
+        ]
+      }
+    },
+    {
+      "file": "f040_snr20_w02.npz",
+      "frequency_hz": 40,
+      "snr_db": 20,
+      "source": "DDPM/experiments/seismic_sensitivity_90outer_fit10_denoise5_dt1ms_seed42_20261030/inputs/f040_snr20_w02.pth",
+      "source_sha256": "c0fd22ca4b64b3e05d1a8a5bc7d4c36a6363cb98e518cf7d00afd64f9519e97f",
+      "scalars": {
+        "imp_min": 1226.0,
+        "imp_max": 4628.0,
+        "positions": [
+          30,
+          400
+        ],
+        "frequency_hz": 40,
+        "snr_db": 20,
+        "well_count": 2,
+        "dt_s": 0.001
+      },
+      "arrays": {
+        "target": [
+          1,
+          512,
+          512
+        ],
+        "observed": [
+          1,
+          1,
+          512,
+          512
+        ],
+        "well_image": [
+          1,
+          1,
+          512,
+          512
+        ],
+        "well_mask": [
+          1,
+          1,
+          512,
+          512
+        ],
+        "initial_model": [
+          1,
+          512,
+          512
+        ],
+        "wavelet": [
+          1,
+          32,
+          501
+        ],
+        "clean": [
+          1,
+          1,
+          512,
+          512
+        ],
+        "maximum_well_mask": [
+          1,
+          1,
+          512,
+          512
+        ]
+      }
+    },
+    {
+      "file": "f060_snr20_w02.npz",
+      "frequency_hz": 60,
+      "snr_db": 20,
+      "source": "DDPM/experiments/seismic_sensitivity_90outer_fit10_denoise5_dt1ms_seed42_20261030/inputs/f060_snr20_w02.pth",
+      "source_sha256": "fab55bcf45937b2fd2e21bfbef5527428c27310d4d9f7f8e59dd840de49440ec",
+      "scalars": {
+        "imp_min": 1226.0,
+        "imp_max": 4628.0,
+        "positions": [
+          30,
+          400
+        ],
+        "frequency_hz": 60,
+        "snr_db": 20,
+        "well_count": 2,
+        "dt_s": 0.001
+      },
+      "arrays": {
+        "target": [
+          1,
+          512,
+          512
+        ],
+        "observed": [
+          1,
+          1,
+          512,
+          512
+        ],
+        "well_image": [
+          1,
+          1,
+          512,
+          512
+        ],
+        "well_mask": [
+          1,
+          1,
+          512,
+          512
+        ],
+        "initial_model": [
+          1,
+          512,
+          512
+        ],
+        "wavelet": [
+          1,
+          32,
+          501
+        ],
+        "clean": [
+          1,
+          1,
+          512,
+          512
+        ],
+        "maximum_well_mask": [
+          1,
+          1,
+          512,
+          512
+        ]
+      }
+    },
+    {
+      "file": "f025_snr30_w02.npz",
+      "frequency_hz": 25,
+      "snr_db": 30,
+      "source": "DDPM/experiments/seismic_sensitivity_90outer_fit10_denoise5_dt1ms_seed42_20261030/inputs/f025_snr30_w02.pth",
+      "source_sha256": "25c81538ecf4e9a106ae698a4c2e8fdc8cad7bdda3438f445c8420a2aef096e6",
+      "scalars": {
+        "imp_min": 1226.0,
+        "imp_max": 4628.0,
+        "positions": [
+          30,
+          400
+        ],
+        "frequency_hz": 25,
+        "snr_db": 30,
+        "well_count": 2,
+        "dt_s": 0.001
+      },
+      "arrays": {
+        "target": [
+          1,
+          512,
+          512
+        ],
+        "observed": [
+          1,
+          1,
+          512,
+          512
+        ],
+        "well_image": [
+          1,
+          1,
+          512,
+          512
+        ],
+        "well_mask": [
+          1,
+          1,
+          512,
+          512
+        ],
+        "initial_model": [
+          1,
+          512,
+          512
+        ],
+        "wavelet": [
+          1,
+          32,
+          501
+        ],
+        "clean": [
+          1,
+          1,
+          512,
+          512
+        ],
+        "maximum_well_mask": [
+          1,
+          1,
+          512,
+          512
+        ]
+      }
+    },
+    {
+      "file": "f025_snr10_w02.npz",
+      "frequency_hz": 25,
+      "snr_db": 10,
+      "source": "DDPM/experiments/seismic_sensitivity_90outer_fit10_denoise5_dt1ms_seed42_20261030/inputs/f025_snr10_w02.pth",
+      "source_sha256": "d3c5e39d70118d943a4ad18f9f0f9b6db04f53305e4ee4b417cb458d1f6f04dc",
+      "scalars": {
+        "imp_min": 1226.0,
+        "imp_max": 4628.0,
+        "positions": [
+          30,
+          400
+        ],
+        "frequency_hz": 25,
+        "snr_db": 10,
+        "well_count": 2,
+        "dt_s": 0.001
+      },
+      "arrays": {
+        "target": [
+          1,
+          512,
+          512
+        ],
+        "observed": [
+          1,
+          1,
+          512,
+          512
+        ],
+        "well_image": [
+          1,
+          1,
+          512,
+          512
+        ],
+        "well_mask": [
+          1,
+          1,
+          512,
+          512
+        ],
+        "initial_model": [
+          1,
+          512,
+          512
+        ],
+        "wavelet": [
+          1,
+          32,
+          501
+        ],
+        "clean": [
+          1,
+          1,
+          512,
+          512
+        ],
+        "maximum_well_mask": [
+          1,
+          1,
+          512,
+          512
+        ]
+      }
+    },
+    {
+      "file": "f025_snr05_w02.npz",
+      "frequency_hz": 25,
+      "snr_db": 5,
+      "source": "DDPM/experiments/seismic_sensitivity_90outer_fit10_denoise5_dt1ms_seed42_20261030/inputs/f025_snr05_w02.pth",
+      "source_sha256": "8bc532356feb6bde8a1876a8a09177e196bbce12302531fb4bf5df551345b964",
+      "scalars": {
+        "imp_min": 1226.0,
+        "imp_max": 4628.0,
+        "positions": [
+          30,
+          400
+        ],
+        "frequency_hz": 25,
+        "snr_db": 5,
+        "well_count": 2,
+        "dt_s": 0.001
+      },
+      "arrays": {
+        "target": [
+          1,
+          512,
+          512
+        ],
+        "observed": [
+          1,
+          1,
+          512,
+          512
+        ],
+        "well_image": [
+          1,
+          1,
+          512,
+          512
+        ],
+        "well_mask": [
+          1,
+          1,
+          512,
+          512
+        ],
+        "initial_model": [
+          1,
+          512,
+          512
+        ],
+        "wavelet": [
+          1,
+          32,
+          501
+        ],
+        "clean": [
+          1,
+          1,
+          512,
+          512
+        ],
+        "maximum_well_mask": [
+          1,
+          1,
+          512,
+          512
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+# Shared dependencies for inference and training (Python 3.10).
+# Install a suitable PyTorch build for your hardware before using this file.
+
+# Inference, numerical computing, and Jupyter
+torch==2.7.0
+diffusers==0.33.1
+accelerate==1.7.0
+safetensors
+numpy==2.2.6
+scipy==1.15.3
+matplotlib==3.10.6
+pandas==2.3.2
+tqdm
+notebook
+ipykernel
+ipywidgets==8.1.7
+
+# Training
+torchvision==0.22.0
+transformers==4.52.4
+huggingface-hub==0.31.4
+datasets==4.0.0
+kornia==0.8.1
+torchmetrics==1.8.1
+pycocotools
+packaging
+wandb
+
+# Optional INR HashGrid backend (NVIDIA CUDA only).
+# Its build imports torch, so install the dependencies above first.
+# The backend is not installed by the basic requirements command.
+# Then run these two commands with a CUDA toolchain available:
+# python -m pip install setuptools==78.1.1 wheel==0.45.1 ninja==1.13.0
+# python -m pip install --no-build-isolation "git+https://github.com/NVlabs/tiny-cuda-nn@147741674580e12be8151c33dbd0950ead16d1f3#subdirectory=bindings/torch"
