@@ -4,10 +4,6 @@
 
 This repository provides the code, pretrained models, and example data for the 2D experiments in the paper.
 
-> [!IMPORTANT]
-> **Please cite our paper when publishing research that uses this project.**
-> If you use the code, pretrained models, or example data in this repository to conduct research and publish the resulting findings, please cite **A Plug-and-Play Diffusion Regularizer for Seismic Inversion**. See [Citation](#citation) for the BibTeX entry.
-
 ## Abstract
 
 Seismic inversion is the mathematical process of transforming seismic measurements into subsurface physical models, serving as a cornerstone for both probing the Earth's interior and exploring resources. In seismic inversion, current model-driven iterative inversion methods rely on regularization to mitigate ill-posedness but struggle to balance stability and resolution due to inaccurate prior representations. Generative priors, particularly diffusion models, provide a promising way to overcome the limitations of conventional regularization by capturing complex geological distributions, yet existing diffusion-based seismic inversion methods often lack a universal framework and exhibit limited generalization across diverse geological models. Thus, we propose a plug-and-play diffusion regularizer for seismic inversion and an accompanying inversion framework, enabling seamless integration with various inversion algorithms and generalization across different geological models without retraining. The framework decouples each iteration of model-based inversion into a data-fitting step updated by various inversion algorithms and a diffusion regularization step implemented via a noise-addition and denoising process. To achieve a highly generalizable diffusion regularizer, we constructed numerous complex geological models to train an unconditional diffusion model to learn accurate geological priors with high-resolution. Subsequently, by utilizing two independent ControlNets, we incorporated post-stack seismic data and sparse well-log data as conditions to provide global structural and local fine-scale constraints, further narrowing down the solution space. Experimental results on impedance inversion demonstrate that the proposed diffusion regularizer can be flexibly embedded into various inversion algorithms within our framework, achieving high-precision and high-resolution inversion results across the test dataset, the Marmousi model and the field data. Repeated inversions with independent perturbation paths further provide an empirical assessment of inversion uncertainty.
@@ -250,7 +246,9 @@ The code is released under Apache-2.0. The authors declare no additional use or 
 
 ## Citation
 
-**If you use this project to conduct research and publish the resulting findings, please cite our paper: _A Plug-and-Play Diffusion Regularizer for Seismic Inversion_.**
+> [!IMPORTANT]
+> **Please cite our paper when publishing research that uses this project.**
+> If you use the code, pretrained models, or example data in this repository to conduct research and publish the resulting findings, please cite **A Plug-and-Play Diffusion Regularizer for Seismic Inversion**. The BibTeX entry is provided below.
 
 The accompanying manuscript does not yet have a public URL or DOI. The citation will be updated when publication information becomes available.
 
